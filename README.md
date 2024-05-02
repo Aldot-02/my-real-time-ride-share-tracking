@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+<h1>Real Time Ride Share App</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3 align="center"><a>twizald.02@gmail.com</a> - Google Maps Api</h3>
 
-## Available Scripts
+![demo](/ride-share.png)
 
-In the project directory, you can run:
+## 🚨 Project Overview
 
-### `npm start`
+This project aims to develop a real-time ride-share tracking web application for a transportation agency operating in Kigali, Rwanda. The app enables drivers to navigate a predefined route from Nyabugogo to Kimironko, with five intermediate stops, and provides real-time updates on the estimated time of arrival (ETA) to each stop. The app is built using React.js for the front-end and leverages the Google Maps API for mapping, routing, and location-based functionalities.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project works on all screens
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚨 Project Approach
 
-### `npm test`
+I initially created a react app, and after setting it, I went to my google cloud console api to create a new project and Enabled The necessary apis that were to be used through out the entire functionality of the app. Then, I came back to setting the routes using react router dom for navigating between the two pages on the app, one which is the home page, and the other one which is any route details finder among the stops given.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Homepage
 
-### `npm run build`
+When displayed, it shows the navbar with logo and hamburger menu, bottom navigation and the map in between displaying all the routes from Nyabugogo to Kimironko with markers at their Location. In order to get the functionality, Click on the Hamburger menu, and their will be a beautiful animated popup with the button that the driver should click to start the journey. When it is clicked, using places api, it gets the near by stop station while watching the drivers current location, and calculates the distance and time to that station from Nyabugogo, assuming the driver is using the Driving mode, with constant speed, and from his location to the first stop. When the ride is started, there is the option to stop it with stop button, which will stop calculations and whatching the position of driver, just in case the driver is on the next stop picking up passengers, and can start again when he is done picking up new passengers.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Route Details Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Just planned in case the driver is curious about the distance to a random stop station from another one among the provided routes, where he/she will select among the routes  and set origin and destination to get the distance and estimated time to get there.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠 Installation & Set Up
 
-### `npm run eject`
+1. Installation of the dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```sh
+   npm install //Consider using npm install --force in case you face a challenge of conflicting dependencies to access the site.
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Start the development server
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```sh
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Technologies Used
 
-## Learn More
+1. React Js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Google Maps Javascript Api for getting the maps functionalities in the webpage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Google Maps Geolocation Api for getting the actual location of the driver along the way to Kimironko using watch position method.
 
-### Code Splitting
+4. Google Maps Places Api for calculating distances between the starting point to any other selected route in the second tab of the page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. Google Maps DistanceMatrix Api to obtain the Estimated Arrival time of the driver from Nyabugogo to the nearby location, assuming the constant speed.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### END

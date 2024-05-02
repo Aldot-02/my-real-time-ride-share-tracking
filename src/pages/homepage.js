@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Footer from "../components/footer";
@@ -18,9 +17,11 @@ function HomePage() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const [watchId, setWatchId] = useState(null);
+
   const startRide = () => {
     setIsRideStarted(true);
-    navigator.geolocation.getCurrentPosition(
+    const id = navigator.geolocation.watchPosition(
       (position) => {
         setCurrentLocation({
           lat: position.coords.latitude,
@@ -30,10 +31,12 @@ function HomePage() {
       (error) => console.log(error),
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
     );
+    setWatchId(id);
   };
-
+  
   const stopRide = () => {
     setIsRideStarted(false);
+    navigator.geolocation.clearWatch(watchId);
     setCurrentLocation(null);
     setDuration(null);
     setDistance(null);

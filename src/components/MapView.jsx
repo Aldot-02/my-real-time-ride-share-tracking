@@ -1,4 +1,3 @@
-// MapView.jsx
 import React, { useEffect, useState } from "react";
 import { Map, Marker, GoogleApiWrapper, Polyline } from "google-maps-react";
 
@@ -119,9 +118,9 @@ const MapView = ({
         ))}
         <Polyline
           path={waypoints.map((waypoint) => waypoint.location)}
-          strokeColor="#0000FF"
-          strokeOpacity={0.8}
-          strokeWeight={2}
+          strokeColor="blue"
+          strokeOpacity={0.6}
+          strokeWeight={10}
         />
       </Map>
     </>
@@ -129,5 +128,5 @@ const MapView = ({
 };
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyAIFotLNmMCHhXxIuLYauCclHTxHH12p_E",
+  apiKey: "AIzaSyAIFotLNmMCHhXxIuLYauCclHTxHH12p_E", //just in case of testing because soon it is going to be deleted
 })(MapView);
