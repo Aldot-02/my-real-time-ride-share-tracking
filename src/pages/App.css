@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--dark-bg);
+  overflow-x: hidden;
+  cursor: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+header,
+footer {
+  padding: 1rem 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  background-image: linear-gradient(to right, #00c9ff 0%, #29e33b 100%);
+}
+
+.ride-info-popup {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  padding: 1rem 5% 1.2rem 5%;
+  background-color: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 3;
+}
+
+.ride-info-popup.open {
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.ride-info-popup h4 {
+  color: #000;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.ride-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.ride-details {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ride-details p {
+  margin-right: 100px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  color: #fff;
+  font-size: 2rem;
+}
+.ride-start-btn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.ride-start-btn button {
+  padding: 10px 40px;
+  background-image: linear-gradient(to right, #00c9ff 0%, #29e33b 100%);
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+.search-route {
+  display: flex;
+}
+.Destinations input {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  margin-right: 20px;
+}
+.Destinations {
+  display: flex;
+}
+.Destinations input {
+  margin-left: 10px;
+}
+.search-route select {
+  width: 90%;
+  padding: 40px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+
+.map {
+  height: 100%;
+  width: 100%;
+  background-color: #00c9ff;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  footer {
+    font-size: 1.5rem;
+  }
+}
